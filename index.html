@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>0</h1>
+        <input type="text">
+        <button>+</button>
+    </div>
+    <script>
+        const calc = {
+            addbtn: document.querySelector('button'),
+            inputTxt: document.querySelector('input'),
+            h1: document.querySelector('h1'),
+            total: 0,
+            init(){
+                this.addbtn.addEventListener('click',this.add.bind(this));
+            },
+            add() {
+                this.total  += Number(this.inputTxt.value);
+                this.h1.textContent = this.total;
+                this.inputTxt.value = '';
+             },
+        };
+        calc.init();
+    </script>
+</body>
+</html>
